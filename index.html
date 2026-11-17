@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SE309-50 · OASIS Demans Projesi Planı</title>
+<style>
+:root{--bg:#eef2f6;--surf:#fff;--ink:#14232f;--mute:#53636f;--line:#d3dce4;--c1:#0f6e7a;--c2:#a86a10;--c3:#4f46b8;--c4:#b8325a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a22;--surf:#16252f;--ink:#e6eef4;--mute:#9db0bd;--line:#2a3c48;--c1:#4fc3d0;--c2:#e8b04a;--c3:#9a94f0;--c4:#f07a9c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1a22;--surf:#16252f;--ink:#e6eef4;--mute:#9db0bd;--line:#2a3c48;--c1:#4fc3d0;--c2:#e8b04a;--c3:#9a94f0;--c4:#f07a9c;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:10}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--surf);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:8px 16px}
+nav a{color:var(--mute);text-decoration:none;padding:6px 12px;border-radius:8px;white-space:nowrap;font-size:14px}
+nav a:hover,nav a:focus-visible{background:var(--bg);color:var(--ink);outline:none}
+main{max-width:920px;margin:0 auto;padding:0 20px 64px}
+section{padding-top:56px}
+h1,h2,h3{font-family:Charter,"Iowan Old Style",Georgia,serif;line-height:1.2;margin:0 0 12px}
+h1{font-size:clamp(30px,6vw,46px);margin-top:48px;max-width:19ch}
+h2{font-size:28px}h3{font-size:19px}
+p{margin:0 0 12px;max-width:68ch}
+.lead{font-size:18px;color:var(--mute)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin:20px 0;font-size:14px;color:var(--mute)}
+.facts b{color:var(--ink)}
+.box{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:18px}
+svg{width:100%;height:auto;display:block}
+svg .nd{cursor:pointer}
+svg text{fill:var(--ink);font:13px system-ui,sans-serif}
+svg .on rect{stroke-width:3}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tab{border:2px solid var(--line);background:var(--surf);color:var(--ink);border-radius:10px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.tab[aria-selected="true"]{border-color:var(--rc);box-shadow:inset 0 -4px 0 var(--rc)}
+.tab:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid var(--rc,var(--c1));outline-offset:2px}
+.names{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:8px}
+.names input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:14px}
+.panel{border-left:6px solid var(--rc);padding-left:18px}
+.panel ul{list-style:none;padding:0;margin:12px 0}
+.panel li{display:flex;gap:10px;padding:6px 0;border-top:1px solid var(--line)}
+.panel li input{margin-top:6px;accent-color:var(--rc);flex:none}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0 2px}
+.bar i{display:block;height:100%;width:0;background:var(--c1);transition:width .25s}
+.note{border-left:4px solid var(--c2);background:var(--surf);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.tl{list-style:none;padding:0;margin:0;border-left:3px solid var(--line)}
+.tl li{padding:0 0 18px 20px;position:relative}
+.tl li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--surf);border:3px solid var(--c1)}
+.tl b{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td,th{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.wrap{overflow-x:auto}
+footer{font-size:14px;color:var(--mute);margin-top:48px}
+</style>
+</head>
+<body>
+<nav>
+<a href="#akis">Akış ve roller</a><a href="#takvim">Takvim</a><a href="#kurallar">Ortak kurallar</a><a href="#rapor">Rapor</a><a href="#tuzaklar">Tuzaklar</a><a href="#veri">Veri</a>
+</nav>
+<main>
+<h1>Beyin ölçümlerinden demans tahmini</h1>
+<p class="lead">SE309-50, OASIS-1 ve OASIS-2 tablo verisi. Bu sayfa 4 kişilik grubun ne yapacağını, kimin hangi bölümü yönettiğini ve ne zaman teslim edeceğini gösterir.</p>
+<div class="facts"><span><b>Grup:</b> 4 kişi</span><span><b>Bölüm:</b> 4 (çekirdek ve uzantı tek bölüm)</span><span><b>Süre:</b> ~5 hafta</span><span><b>Dil:</b> Python</span></div>
+
+<section id="akis" style="padding-top:8px">
+<h2>Akış ve roller</h2>
+<p>Üye 1 ortak veriyi ve pipeline’ı üretir, diğer üç kişi bunun üstüne kurar. Şemada bir kutuya ya da aşağıdaki sekmelere dokunun.</p>
+<div class="box">
+<svg viewBox="0 0 720 310" role="img" aria-label="OASIS-1 ve OASIS-2 verisi ortak ön işlemeden geçer, dört bölüme ayrılır">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a9aa6"/></marker></defs>
+<g stroke="#8a9aa6" stroke-width="2" fill="none" marker-end="url(#a)">
+<path d="M135 85H185"/><path d="M135 225H185"/>
+<path d="M345 135L412 42"/><path d="M345 150L412 112"/><path d="M345 170L412 182"/><path d="M345 185L412 252"/></g>
+<g><rect x="15" y="60" width="120" height="50" rx="8" fill="var(--surf)" stroke="var(--line)" stroke-width="2"/><text x="75" y="82" text-anchor="middle">OASIS-1</text><text x="75" y="100" text-anchor="middle" font-size="11">kesitsel</text>
+<rect x="15" y="200" width="120" height="50" rx="8" fill="var(--surf)" stroke="var(--line)" stroke-width="2"/><text x="75" y="222" text-anchor="middle">OASIS-2</text><text x="75" y="240" text-anchor="middle" font-size="11">boylamsal</text></g>
+<g class="nd" data-r="0" tabindex="0"><rect x="190" y="105" width="155" height="100" rx="10" fill="var(--surf)" stroke="var(--c1)" stroke-width="2"/><text x="267" y="140" text-anchor="middle">Ortak şema</text><text x="267" y="160" text-anchor="middle">Eksik değer, sızıntı</text><text x="267" y="180" text-anchor="middle">Pipeline, 2 model</text></g>
+<g class="nd" data-r="0" tabindex="0"><rect x="415" y="15" width="290" height="55" rx="10" fill="var(--surf)" stroke="var(--c1)" stroke-width="2"/><text x="430" y="38">Üye 1 · Çekirdek + uzantı</text><text x="430" y="57" font-size="11">denek bazlı bölme</text></g>
+<g class="nd" data-r="1" tabindex="0"><rect x="415" y="85" width="290" height="55" rx="10" fill="var(--surf)" stroke="var(--c2)" stroke-width="2"/><text x="430" y="108">Üye 2 · Dönüşüm tahmini</text><text x="430" y="127" font-size="11">yalnız baseline girdisi</text></g>
+<g class="nd" data-r="2" tabindex="0"><rect x="415" y="155" width="290" height="55" rx="10" fill="var(--surf)" stroke="var(--c3)" stroke-width="2"/><text x="430" y="178">Üye 3 · Dış doğrulama</text><text x="430" y="197" font-size="11">OASIS-1 ↔ OASIS-2</text></g>
+<g class="nd" data-r="3" tabindex="0"><rect x="415" y="225" width="290" height="55" rx="10" fill="var(--surf)" stroke="var(--c4)" stroke-width="2"/><text x="430" y="248">Üye 4 · Model neye dayanıyor?</text><text x="430" y="267" font-size="11">MMSE’li/siz, alt gruplar, özellik önemi</text></g>
+</svg>
+</div>
+
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="box panel" id="panel" aria-live="polite"></div>
+<div class="note"><b>Üye 1 ilk hafta teslim kritik.</b> Temiz veri ve ortak <code>preprocess.py</code> gelmeden diğer üç kişi kendi analizini başlatamaz. Bu sürede diğerleri kodlarını taslak olarak hazırlar.</div>
+<p style="font-size:14px;color:var(--mute)">Genel ilerleme: <span id="pct">0%</span></p>
+<div class="bar"><i id="bar"></i></div>
+<details style="margin-top:16px"><summary>Üyelerin adları</summary>
+<div class="names" id="names"></div></details>
+</section>
+
+<section id="takvim">
+<h2>Takvim</h2>
+<ol class="tl">
+<li><b>Hafta 1 · Altyapı</b>Veri indirme, kullanım şartları, ortak şema. Üye 1 ortak veriyi ve pipeline’ı teslim eder. Diğerleri literatür okur, kendi kodunu taslak yazar.</li>
+<li><b>Hafta 2 · Çekirdek</b>Üye 1 modeller ve sızıntı kontrolü. Üye 2, 3 ve 4 ortak pipeline ile kendi analizlerini başlatır.</li>
+<li><b>Hafta 3 · İlk sonuçlar</b>Ara toplantı: aynı hedef tanımı, aynı rastgele tohum, aynı metrikler kullanılıyor mu?</li>
+<li><b>Hafta 4 · Yazım</b>Herkes kendi bölümünü yazar. Grafik ve tablo biçimi standartlaştırılır.</li>
+<li><b>Hafta 5 · Birleştirme</b>Çapraz gözden geçirme (herkes başka birinin bölümünü okur), kaynakça, Contributions, teslim.</li>
+</ol>
+</section>
+
+<section id="kurallar">
+<h2>Ortak kurallar</h2>
+<div class="grid">
+<div class="box"><h3>Tek repo</h3><p>GitHub’da her üyenin kendi branch’i var. Ortak kod <code>common/</code> klasöründe durur.</p></div>
+<div class="box"><h3>Aynı ayarlar</h3><p>Sabit <code>random_state</code>, aynı hedef tanımı (CDR 0 sağlıklı, CDR ≥ 0,5 demans), aynı metrik seti.</p></div>
+<div class="box"><h3>Sızıntı yok</h3><p>Doldurma, ölçekleme ve özellik seçimi yalnızca train katmanında fit edilir. Bunun için <code>Pipeline</code> kullanılır.</p></div>
+<div class="box"><h3>Denek bazlı bölme</h3><p>OASIS-2’de <code>GroupKFold</code> veya <code>StratifiedGroupKFold</code> zorunlu. Aynı kişi hem train hem test’te olamaz.</p></div>
+<div class="box"><h3>Metrikler</h3><p>ROC-AUC, PR-AUC, precision, recall, F1 ve karışıklık matrisi. Yalnız accuracy yetmez.</p></div>
+<div class="box"><h3>Sınırlamalar</h3><p>Her bölümde küçük örneklem, seçilim yanlılığı ve klinik kullanıma uygun olmama açıkça yazılır.</p></div>
+</div>
+</section>
+
+<section id="rapor">
+<h2>Rapor iskeleti</h2>
+<div class="box wrap"><table id="rep"><thead><tr><th>Bölüm</th><th>Sorumlu</th></tr></thead><tbody></tbody></table></div>
+<p style="margin-top:12px">Contributions bölümünde her üyenin hangi bölümü yönettiği ve neyi kodlayıp yazdığı açıkça belirtilir.</p>
+</section>
+
+<section id="tuzaklar">
+<h2>Dikkat edilecek tuzaklar</h2>
+<div class="grid">
+<div class="box"><h3>Group sütunu</h3><p>OASIS-2’deki Nondemented/Demented/Converted etiketi girdi olarak kullanılırsa sızıntı olur.</p></div>
+<div class="box"><h3>CDR ve MMSE</h3><p>CDR hedefi tanımlar, girdi olamaz. MMSE hedefe çok yakındır; bu yüzden Üye 4’ün MMSE’siz analizi önemlidir.</p></div>
+<div class="box"><h3>Eksik CDR</h3><p>OASIS-1’de CDR’si eksik olan (genç) denekler çıkarılır ve nedeni raporda yazılır.</p></div>
+<div class="box"><h3>Küçük örneklem</h3><p>Dönüşüm analizinde converter sayısı azdır. Güven aralığı verin, abartılı sonuç iddia etmeyin.</p></div>
+<div class="box"><h3>eTIV ve ASF</h3><p>İkisi neredeyse birebir ters ilişkilidir. Özellik önemini yorumlarken bunu belirtin.</p></div>
+<div class="box"><h3>Sağ sansür</h3><p>Kısa takip edilen kişiler “converter değil” görünebilir. Takip süresini tartışmaya katın.</p></div>
+</div>
+</section>
+
+<section id="veri">
+<h2>Veri ve kaynak</h2>
+<p>OASIS-1 (kesitsel) ve OASIS-2 (boylamsal) tablo dosyaları: yaş, cinsiyet, eğitim, SES, MMSE, CDR, eTIV, nWBV, ASF. İndirmeden önce OASIS veri kullanım şartları kabul edilir ve veri seti raporda kaynak olarak gösterilir. Üye 1 kaynakçayı hazırlar.</p>
+<footer>Plan v1 · SE309-50 · Adlar ve ilerleme bu tarayıcıda saklanır, başkalarıyla paylaşılmaz.</footer>
+</section>
+</main>
+<script>
+const R=[
+{c:"--c1",t:"Çekirdek + Uzantı",s:"Veri, sızıntı, iki model, denek bazlı bölme",
+k:["OASIS şartlarını kabul et, citation hazırla","İki veri setini ortak şemaya getir","Eksik değer (SES, MMSE): yöntemleri karşılaştır ve seçimi gerekçelendir","Sızıntı kontrolü: CDR girdiden çıkar, “CDR dahilse ~%100” deneyini göster","Hedef değişkeni tanımla","İki model: lojistik regresyon ve Random Forest ya da Gradient Boosting","GroupKFold ile denek bazlı bölme, OASIS-2 ziyaret kuralını açıkla","Ortak preprocess.py ve utils.py yaz"],
+o:"Temiz veri, ortak pipeline, Data, Preprocessing, Leakage ve Models bölümleri.",g:"Verir: veri ve pipeline (3 kişiye). Alır: kimseden bağımlılığı yok."},
+{c:"--c2",t:"Dönüşüm tahmini",s:"OASIS-2: baseline’dan sonraki demansı tahmin et",
+k:["Her deneğin ilk ziyaretini al, yalnız CDR 0 olanları seç","converter etiketini kur ve Group sütunuyla çapraz kontrol et","Girdi: yalnız baseline (yaş, cinsiyet, eğitim, SES, MMSE, eTIV, nWBV, ASF)","Küçük örneklem için tekrarlı gruplu CV ve bootstrap güven aralığı","Takip süresi ve sağ sansür tartışması","Basit baseline modeli (yalnız MMSE ya da yaş) ile karşılaştır"],
+o:"Dönüşüm tahmini bölümü ve sınırlamalar tartışması.",g:"Alır: Üye 1’in pipeline’ı."},
+{c:"--c3",t:"Dış doğrulama",s:"OASIS-1’de eğit, OASIS-2 baseline’da test et ve tersi",
+k:["OASIS-1 → OASIS-2 baseline","OASIS-2 baseline → OASIS-1","İç ve dış doğrulama skorlarını yan yana tabloda göster","Yaş, nWBV ve eTIV dağılımlarını görselleştir (covariate shift)","Kalibrasyon eğrisi ve eşik kayması","Farkın nedenlerini tartış: popülasyon, protokol, sınıf oranı, eksik değer"],
+o:"Dış doğrulama tablosu, dağılım grafikleri, tartışma.",g:"Alır: Üye 1’in ortak şeması."},
+{c:"--c4",t:"Model neye dayanıyor?",s:"MMSE’li ve MMSE’siz, alt gruplar, yorumlanabilirlik",
+k:["MMSE’li ve MMSE’siz aynı bölmelerle karşılaştır","Cinsiyete göre performans","Yaş gruplarına göre performans (<65, 65–75, 75–85, 85+) ve güven aralığı","Permutation importance (tercihen), katsayılar, isteğe bağlı SHAP","Derinliği 2–3 olan küçük karar ağacı ve kuralları","Pipeline’da özellik kümesini parametre yap"],
+o:"Yorumlanabilirlik bölümü, grafikler, karar ağacı kuralları.",g:"Alır: Üye 1’in pipeline’ı."}];
+const REP=[["Giriş ve veri, kaynak gösterimi",0],["Ön işleme, eksik değer, sızıntı kontrolü",0],["Modeller ve denek bazlı değerlendirme",0],["Dönüşüm tahmini",1],["Dış doğrulama",2],["Model neye dayanıyor?",3],["Genel tartışma ve sınırlamalar",-1],["Contributions",-1],["Kaynakça",0]];
+let sel=0,names=["","","",""],done={};
+function ld(){try{names=JSON.parse(localStorage.getItem("se309n"))||names;done=JSON.parse(localStorage.getItem("se309d"))||{}}catch(e){}}
+function sv(){try{localStorage.setItem("se309n",JSON.stringify(names));localStorage.setItem("se309d",JSON.stringify(done))}catch(e){}}
+const nm=i=>names[i]?names[i]:"Üye "+(i+1);
+function pct(){let t=0,d=0;R.forEach((r,i)=>r.k.forEach((_,j)=>{t++;if(done[i+"-"+j])d++}));const p=Math.round(100*d/t);document.getElementById("pct").textContent=p+"% ("+d+"/"+t+" görev)";document.getElementById("bar").style.width=p+"%"}
+function tabs(){const el=document.getElementById("tabs");el.innerHTML="";R.forEach((r,i)=>{const b=document.createElement("button");b.className="tab";b.setAttribute("role","tab");b.setAttribute("aria-selected",i===sel);b.style.setProperty("--rc","var("+r.c+")");b.textContent=nm(i)+" · "+r.t;b.onclick=()=>{sel=i;draw()};el.appendChild(b)});
+document.querySelectorAll("svg .nd").forEach(g=>g.classList.toggle("on",+g.dataset.r===sel))}
+function panel(){const r=R[sel],p=document.getElementById("panel");p.style.setProperty("--rc","var("+r.c+")");
+p.innerHTML="<h3>"+nm(sel)+" · "+r.t+"</h3><p>"+r.s+"</p><ul>"+r.k.map((x,j)=>`<li><input type="checkbox" id="c${sel}-${j}" ${done[sel+"-"+j]?"checked":""}><label for="c${sel}-${j}">${x}</label></li>`).join("")+"</ul><p><b>Çıktı:</b> "+r.o+"</p><p style=\"color:var(--mute)\">"+r.g+"</p>";
+p.querySelectorAll("input").forEach((c,j)=>c.onchange=()=>{done[sel+"-"+j]=c.checked;sv();pct()})}
+function rep(){document.querySelector("#rep tbody").innerHTML=REP.map(r=>`<tr><td>${r[0]}</td><td>${r[1]<0?"Hepsi":`<span class="dot" style="background:var(${R[r[1]].c})"></span>${nm(r[1])}`}</td></tr>`).join("")}
+function draw(){tabs();panel();pct();rep()}
+function nameInputs(){const el=document.getElementById("names");names.forEach((n,i)=>{const x=document.createElement("input");x.value=n;x.placeholder="Üye "+(i+1)+" adı";x.setAttribute("aria-label","Üye "+(i+1)+" adı");x.oninput=()=>{names[i]=x.value.trim();sv();draw()};el.appendChild(x)})}
+document.querySelectorAll("svg .nd").forEach(g=>{const go=()=>{sel=+g.dataset.r;draw();document.getElementById("tabs").scrollIntoView({block:"center"})};g.onclick=go;g.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
+ld();nameInputs();draw();
+</script>
+</body>
+</html>
